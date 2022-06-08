@@ -1,0 +1,118 @@
+<html>
+<head>
+    <link rel="icon" href="../slike/favicon-32x32.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"> 
+<title>
+   СТР "Шаца" 
+</title>
+<link href="../stilovi.css"  rel="stylesheet">
+<link href="galerija.css"  rel="stylesheet">
+</head>
+<body class="ibody">
+<div class="ibody2">
+<div class="ibody3">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+<div class="stranice">
+    <a href="../index.html" id="dugme3">почетна</a>
+    <a href="istorijat.html" id="dugme2">године рада...</a>
+    <a href="inventar.html" id="dugme1">инвентар</a>
+    <a href="lokacija.html" id="dugme4">пронађите нас</a>
+    <a href="vlasnik.html" id="dugme5">о власнику</a>
+</div>
+<p>Ова продавница, иако је веома мала и скромна има веома велики избор робе, тачније има све основно што вам је потребно за кућу, ту су разна пића (воде, сокови, алкохолна пића), млечни производи, пшенични производи, хемија потреба за кућу, школски прибор итд.</p>
+<h2 style="text-align:center">Производи</h2>
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img src="../slike/1.jpg" style="width: 50%;">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <img src="../slike/2.jpg" style="width: 50%;">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <img src="../slike/3.jpg" style="width: 50%;">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <img src="../slike/4.jpg" style="width: 50%;">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <img src="../slike/5.jpg" style="width: 50%;">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img src="../slike/6.jpg" style="width: 50%;">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="../slike/1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Пулт">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../slike/2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Задњи део продавнице">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../slike/3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Пулт">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../slike/4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Сухомеснати производи">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../slike/5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Школски прибор">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="../slike/6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Хемија">
+    </div>
+  </div>
+</div>
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("demo");
+      let captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+    </script>
+</div>
+</body>
+</html>
